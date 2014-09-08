@@ -1,0 +1,30 @@
+START DOCKER 
+$ sudo systemctl start docker
+
+To start on system boot:
+$ sudo systemctl enable docker
+
+SCOPE ALREADY EXISTS
+
+[root@alarmpi docker-mongodb]# docker start d945
+Error: Cannot start container d945: Unit docker-d945dd9e14a394fc881089318ad0264e52b52572c478e702021da4b28b265e92.scope already exists.
+
+systemctl stop  docker-d945dd9e14a394fc881089318ad0264e52b52572c478e702021da4b28b265e92.scopesystemctl stop
+
+
+RUN CONTAINER AS DEAMON
+docker run -d -P cretzel/rpi-mongodb
+
+REMOVE <none> IMAGES
+docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+
+CREATE IMAGE
+docker build -t cretzel/rpi-data .
+
+RUN DATA ONLY CONTAINER
+docker run -i -t -v /data:/home/pi/data cretzel/rpi-data
+
+RUN WITH VOLUME FROM
+docker run -d -P --volumes-from hungry_colden cretzel/rpi-mongodb
+
+
