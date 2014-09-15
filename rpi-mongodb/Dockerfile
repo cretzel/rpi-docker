@@ -10,7 +10,7 @@ ADD mongodb-start.sh /usr/bin/
 
 # Expose port 27017 and 28017 from the container to the host
 EXPOSE 27017
-EXPOSE 28017
+#EXPOSE 28017
 
 # Run mongodb
 CMD /usr/bin/mongodb-start.sh

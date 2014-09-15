@@ -17,5 +17,5 @@ ADD ./app /app
 
 ENV DOCKER_HOST unix:///var/run/docker.sock
 
-CMD /usr/local/bin/docker-gen -interval 10 -watch -notify "python /tmp/register.py" etcd.tmpl /tmp/register.py
+CMD /usr/local/bin/docker-gen -interval 10 -watch -notify "python /tmp/register.py" etcd-single-address.tmpl /tmp/register.py
 
