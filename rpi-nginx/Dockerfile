@@ -4,7 +4,7 @@ MAINTAINER cretzel
 
 # Install nginx
 RUN apt-get update && apt-get install -y nginx
-ADD etc/nginx /etc/nginx
+ADD etc /etc
 
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/sites-available", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/usr/share/nginx]
 
